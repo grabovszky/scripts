@@ -2,7 +2,7 @@ innitvar = raw_input("Number (0-Z): ")
 basevar = int(raw_input("Base (2-35): "))
 convertvar = int(raw_input("Convert base (2-35): "))
 
-# Create a symbol-to-value table.
+# symbol-to-value table.
 SY2VA = {'0': 0,
          '1': 1,
          '2': 2,
@@ -40,15 +40,6 @@ SY2VA = {'0': 0,
          'Y': 34,
          'Z': 35}
 
-# Take a string and base to convert to.
-# Allocate space to store your number.
-# For each character in your string:
-#     Ensure character is in your table.
-#     Find the value of your character.
-#     Ensure value is within your base.
-#     Self-multiply your number with the base.
-#     Self-add your number with the digit's value.
-# Return the number.
 
 integer = 0
 for character in innitvar:
@@ -58,17 +49,8 @@ for character in innitvar:
     integer *= basevar
     integer += value
 
-# Create a value-to-symbol table.
+# value-to-symbol table
 VA2SY = dict(map(reversed, SY2VA.items()))
-
-# Take a integer and base to convert to.
-# Create an array to store the digits in.
-# While the integer is not zero:
-#     Divide the integer by the base to:
-#         (1) Find the "last" digit in your number (value).
-#         (2) Store remaining number not "chopped" (integer).
-#     Save the digit in your storage array.
-# Return your joined digits after putting them in the right order.
 
 array = []
 while integer:
@@ -76,5 +58,5 @@ while integer:
     array.append(VA2SY[value])
 answer = ''.join(reversed(array))
 
-# Display the results of the calculations.
+
 print (answer)

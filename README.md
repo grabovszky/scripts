@@ -1,2 +1,3 @@
-# scripts
-Some random shell scripts to automate tasks
+# Useful scripts
+
+> Some random scripts to automate tasks
